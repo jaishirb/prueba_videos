@@ -1,6 +1,7 @@
 from django.db import models
 
 from apps.utils.models import ModelBase
+from apps.utils.shortcuts import get_object_or_none
 
 
 class Categoria(ModelBase):
@@ -77,6 +78,19 @@ class ProgresoVideo(ModelBase):
         blank=True,
         null=True
     )
+
+    def save(self, *args, **kwargs):
+        if self.pk is None:
+            inscripcion = get_object_or_none(
+                Inscripcion,
+                usuario=self.usuario,
+                curso=self.curso
+            )
+            if inscripcion:
+                self.inscripcion = inscripcion
+            categoria = self.curso.categoria.nombre
+            self.categoria = categoria
+        super(ProgresoVideo, self).save(*args, **kwargs)
 
     def __str__(self):
         return str(self.id)
