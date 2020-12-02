@@ -1,6 +1,6 @@
 
 
-# Django Osw4l Docker
+# Prueba Videos
 It is a beautiful Django image simple to configure, run and deploy, it was made with a lot of love and dedication for all human beings who love simple things.
 
 this project contains the next libraries
@@ -107,4 +107,4 @@ if you wanna deploy this project in production, [go to here](https://gist.github
 
 
 **Thanks for using my project, if you need something else, feel you free to contact me**
-**me@osw4l.com**
+**jaisirenterprise@gmail.com**
